@@ -1,20 +1,15 @@
-// /src/Login.js
+// src/Login.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { signInWithEmail, signInWithGoogle, checkUserInDatabase, addUserToDatabase } from '../firebase.js';
+import { signInWithEmail, signInWithGoogle, checkUserInDatabase, addUserToDatabase } from '../firebase';
 import { Link } from 'react-router-dom';
 
-const Login = (props) => {
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
+    const handleEmailChange = (e) => setEmail(e.target.value);
+    const handlePasswordChange = (e) => setPassword(e.target.value);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -68,7 +63,7 @@ const Login = (props) => {
                     <SignUpLink to="/signup">Sign Up</SignUpLink>
                 </Form>
                 <GoogleButton onClick={handleGoogleSignIn}>
-                    Sign up with Google
+                    Sign in with Google
                 </GoogleButton>
             </Content>
         </Container>
@@ -77,7 +72,6 @@ const Login = (props) => {
 
 export default Login;
 
-// Styled Components
 const Container = styled.div`
   display: flex;
   align-items: center;

@@ -1,19 +1,14 @@
-// /src/SignUp.js
+// src/SignUp.js
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { addUserToDatabase } from '../firebase.js';
+import { addUserToDatabase } from '../firebase';
 
 const SignUp = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleUsernameChange = (e) => {
-        setUsername(e.target.value);
-    };
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
+    const handleUsernameChange = (e) => setUsername(e.target.value);
+    const handlePasswordChange = (e) => setPassword(e.target.value);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
